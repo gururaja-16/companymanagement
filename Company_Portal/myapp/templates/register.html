@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        /* Add some basic styling for the form container */
+        .form-container {
+            border: 2px solid #ccc; /* Border color and width */
+            padding: 20px; /* Space inside the border */
+            border-radius: 8px; /* Rounded corners */
+            max-width: 400px; /* Max width of the form box */
+            margin: 20px auto; /* Center the form container */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for a lifted effect */
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">Register</h2>
+    <div class="form-container">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>

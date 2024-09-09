@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <style>
+        .comp {
+            display: flex;
+            flex-wrap: wrap; /* Allows items to wrap to the next line if there isn’t enough space */
+        }
+
+        .comp > div {
+            margin-right: 20px; /* Adds space between items */
+        }
+
+        .company-item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px; /* Adds space below each company item */
+        }
+
+        .company-item h5 {
+            margin: 0; /* Removes default margin from h5 */
+        }
+
+        .company-item p {
+            margin: 0; /* Removes default margin from p */
+        }
+    </style>
+</head>
+<body>
+    <div class="comp">
+        {% for i in department %}
+            <div class="company-item">
+                <h5>{{ i.company }}</h5>
+                <p>{{ i.name }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

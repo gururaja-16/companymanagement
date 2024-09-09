@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Company</title>
+</head>
+<body>
+    <h1>Update Company: {{ company.name }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save changes</button>
+    </form>
+    <a href="{% url 'company_list' %}">Back to company list</a>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Company List{% endblock %}
+
+{% block content %}
+    <h2>Companies</h2>
+    <a href="{% url 'create_company' %}">Create New Company</a>
+    <ul>
+        {% for company in companies %}
+            <li>{{ company.name }} - <a href="{% url 'update_company' company.id %}">Edit</a> - <a href="{% url 'delete_company' company.id %}">Delete</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
